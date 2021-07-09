@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,20,300,400,500,600,700,800,900&display=swap');
+*{
+    margin:0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 880px; /*1vh = 9px*/
+    background-color: #131313;
+}
+.container{
+    position: relative;
+}
+.container .card{
+    position:relative;
+    width: 320px;
+    height: 450px;
+    background-color: #232323;
+    border-radius: 20px;
+    overflow: hidden;
+}
+.container .card:before{
+    content: '';
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #cba117;
+    clip-path: circle(1000px at 80% 20%);
+    transition: 0.75s ease-in-out;
+}
+.container .card:hover:before{
+    clip-path: circle(179px at 80% -20%);
+
+}
+.container .card:after{
+    content: 'Nike';
+    position: absolute;
+    top:30%;
+    left: -20%;
+    font-size: 11.5em;
+    font-weight: 840;
+    font-style: oblique;
+    color: rgb(255,255,255,0.04);
+}
+.container .card .imgBox{
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    height: 220px;
+    transform: translateY(-50%);
+    z-index: 10000;
+    transition: 0.75s;
+}
+.container .card:hover .imgBox{
+    top: 0%;
+    transform: translateY(0%);
+}
+.container .card .imgBox img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-10deg);
+    width: 300px;
+}
+.container .card .containerBox{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    transition: 1.5s;
+    z-index: 10;
+}
+.container .card:hover .containerBox{
+    height: 200px;
+}
+.container .card .containerBox h2{
+    position: relative;
+    font-weight: 550;
+    letter-spacing: 0.5px;
+    color: whitesmoke;
+}
+.container .card .containerBox .size,
+.container .card .containerBox .color{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 20px;
+    transition: 0.5s;
+    opacity: 0;
+    visibility: hidden;
+}
+.container .card:hover .containerBox .size{
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0.5s;
+}
+.container .card:hover .containerBox .color{
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0.5s;
+}
+.container .card .containerBox .size h3,
+.container .card .containerBox .color h3{
+    color: #fff;
+    font-weight: 325;
+    font-size: 13.5px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    margin-right: 10px;
+}
+.container .card .containerBox .size span{
+    width: 30px;
+    height: 30px;
+    border-radius: 6px;
+    text-align: center;
+    line-height: 30px;
+    font-size: 14px;
+    display: inline-block;
+    color:black;
+    background:whitesmoke ;
+    margin: 5px;
+    transition: 0.5s;
+    cursor:pointer;
+}
+.container .card .containerBox .size span:hover{
+    background: #cba117;
+}
+.container .card .containerBox .color span{
+    width: 20px;
+    height: 20px;
+    background: #ff0;
+    border-radius: 50%;
+    margin: 5px;
+    cursor: pointer;
+}
+.container .card .containerBox .color span:nth-child(2){
+    background: linear-gradient(
+        90deg,
+        whitesmoke 50%,
+        black 50%
+      );
+}
+.container .card .containerBox .color span:nth-child(3){
+    background: linear-gradient(
+        90deg,
+        #cba117 50%,
+        whitesmoke 50%
+      );
+}
+.container .card .containerBox .color span:nth-child(4){
+    background: linear-gradient(
+        90deg,
+        #cba117 50%,
+        black 50%
+      );
+}
+.container .card .containerBox a{
+    display: inline-block;
+    padding: 10px 20px;
+    background: white;
+    border-radius: 3px;
+    margin-top: 10px;
+    text-decoration: none;
+    font-weight: 550;
+    color:black;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: 0.35s;
+}
+.container .card .containerBox a:hover{
+    background: #cba117;
+}
+.container .card:hover .containerBox a{
+    opacity: 1;
+    transform: translateY(0px);
+    transition-delay: 0.6s;
+}
